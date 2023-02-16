@@ -1,0 +1,9 @@
+proc princomp data=tmp1.economic n=2 out=work.a1 plot=score;
+id region;
+run;
+proc sort data=a1;
+by descending prin1;
+run;
+proc print data=a1;
+var region prin1 prin2;
+run;
